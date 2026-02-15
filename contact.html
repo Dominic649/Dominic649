@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Request Quote | Total Wood Works</title>
+    <meta
+      name="description"
+      content="Contact Total Wood Works and request a quotation for custom furniture and carpentry services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="contact">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header id="site-header"></header>
+
+    <main id="main-content">
+      <section class="page-hero section">
+        <div class="container">
+          <p class="eyebrow">Contact Us</p>
+          <h1>Let's Discuss Your Next Project</h1>
+          <p>Use the form below to request a quote. We respond quickly with tailored pricing.</p>
+        </div>
+      </section>
+
+      <section class="section" id="quote">
+        <div class="container form-layout">
+          <form id="quote-form" class="quote-form" novalidate>
+            <h2>Request a Quote</h2>
+            <div class="field-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required minlength="2" />
+              <small class="error-msg"></small>
+            </div>
+            <div class="field-group">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" required pattern="^[0-9+\-\s]{7,15}$" />
+              <small class="error-msg"></small>
+            </div>
+            <div class="field-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+              <small class="error-msg"></small>
+            </div>
+            <div class="field-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Kitchen Cabinets</option>
+                <option>Wardrobes</option>
+                <option>TV Stands</option>
+                <option>Doors</option>
+                <option>Ceilings</option>
+                <option>Interior Finishes</option>
+              </select>
+              <small class="error-msg"></small>
+            </div>
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+              <small class="error-msg"></small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-card">
+            <h2>Contact Details</h2>
+            <p><strong>Phone:</strong> +234 800 000 0000</p>
+            <p><strong>Email:</strong> info@totalwoodworks.com</p>
+            <p><strong>Address:</strong> 12 Artisan Avenue, Lagos, Nigeria</p>
+            <div class="map-placeholder" aria-label="Google Maps placeholder">Google Maps Embed Placeholder</div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <a class="whatsapp-float" href="https://wa.me/2348000000000" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">WhatsApp</a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
