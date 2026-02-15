@@ -8,7 +8,6 @@ const navItems = [
 
 function renderHeaderFooter() {
   const page = document.body.dataset.page;
-
   const header = document.getElementById('site-header');
   const footer = document.getElementById('site-footer');
   if (!header || !footer) return;
@@ -17,13 +16,10 @@ function renderHeaderFooter() {
     <nav class="site-nav" aria-label="Main Navigation">
       <div class="container nav-wrap">
         <a href="index.html" class="logo">TOTAL WOOD WORKS</a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">☰</button>
         <div class="nav-links" id="nav-links">
           ${navItems
-            .map(
-              (item) =>
-                `<a href="${item.href}" class="${page === item.key ? 'active' : ''}">${item.label}</a>`
-            )
+            .map((item) => `<a href="${item.href}" class="${page === item.key ? 'active' : ''}">${item.label}</a>`)
             .join('')}
         </div>
       </div>
@@ -48,13 +44,15 @@ function renderHeaderFooter() {
 
   const toggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
-  toggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+  toggle?.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
 }
 
 function setupPortfolioFilter() {
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
-
   if (!buttons.length || !cards.length) return;
 
   buttons.forEach((button) => {
@@ -64,8 +62,8 @@ function setupPortfolioFilter() {
       button.classList.add('active');
 
       cards.forEach((card) => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.style.display = show ? 'block' : 'none';
+        const shouldShow = filter === 'all' || card.dataset.category === filter;
+        card.hidden = !shouldShow;
       });
     });
   });
@@ -76,7 +74,6 @@ function setupFormValidation() {
   if (!form) return;
 
   const feedback = document.getElementById('form-feedback');
-
   const validators = {
     name: (value) => value.trim().length >= 2 || 'Please enter at least 2 characters.',
     phone: (value) => /^[0-9+\-\s]{7,15}$/.test(value) || 'Please enter a valid phone number.',
@@ -88,9 +85,9 @@ function setupFormValidation() {
   const validateField = (field) => {
     const rule = validators[field.name];
     if (!rule) return true;
+
     const result = rule(field.value);
     const errorEl = field.parentElement.querySelector('.error-msg');
-
     if (result === true) {
       errorEl.textContent = '';
       field.setAttribute('aria-invalid', 'false');
@@ -103,7 +100,7 @@ function setupFormValidation() {
   };
 
   form.querySelectorAll('input, select, textarea').forEach((field) => {
-    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('blur', () => validateField(field), { passive: true });
   });
 
   form.addEventListener('submit', (event) => {
@@ -125,6 +122,25 @@ function setupFormValidation() {
   });
 }
 
+function setupRevealAnimations() {
+  const revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14, rootMargin: '0px 0px -30px 0px' }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+}
+
 renderHeaderFooter();
 setupPortfolioFilter();
 setupFormValidation();
+setupRevealAnimations();
