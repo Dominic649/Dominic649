@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Total Wood Works cover">
+  <defs>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d130d"/>
+      <stop offset="100%" stop-color="#7a4f2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#og)"/>
+  <text x="90" y="280" fill="#fff4e5" font-family="Playfair Display, serif" font-size="82" font-weight="700">TOTAL WOOD WORKS</text>
+  <text x="90" y="360" fill="#e4d3bd" font-family="Inter, Arial" font-size="42">Premium Custom Furniture & Carpentry</text>
+</svg>

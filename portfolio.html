@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Total Wood Works</title>
+    <meta name="description" content="Browse Total Wood Works portfolio featuring kitchens, wardrobes, TV stands, and luxury wood interior finishes." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.totalwoodworks.com/portfolio.html" />
+    <meta property="og:title" content="Portfolio | Total Wood Works" />
+    <meta property="og:description" content="Explore completed craftsmanship projects by Total Wood Works." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="portfolio">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header id="site-header"></header>
+
+    <main id="main-content">
+      <section class="page-hero section reveal">
+        <div class="container">
+          <p class="eyebrow">Our Portfolio</p>
+          <h1>Recent Craftsmanship Projects</h1>
+          <p>Filter our gallery to explore the categories that matter to your project.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="filter-buttons" role="group" aria-label="Filter projects">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+            <button class="filter-btn" data-filter="wardrobe">Wardrobes</button>
+            <button class="filter-btn" data-filter="tv">TV Stands</button>
+            <button class="filter-btn" data-filter="finish">Interior Finishes</button>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="project-card reveal" data-category="kitchen">
+              <img src="assets/images/project-kitchen.svg" loading="lazy" decoding="async" width="640" height="420" alt="Premium wooden kitchen cabinetry" class="project-image" />
+              <h3>Modern Family Kitchen</h3>
+            </article>
+            <article class="project-card reveal reveal-delay-1" data-category="wardrobe">
+              <img src="assets/images/project-wardrobe.svg" loading="lazy" decoding="async" width="640" height="420" alt="Custom fitted wardrobe" class="project-image" />
+              <h3>Luxury Sliding Wardrobe</h3>
+            </article>
+            <article class="project-card reveal reveal-delay-2" data-category="tv">
+              <img src="assets/images/project-tv.svg" loading="lazy" decoding="async" width="640" height="420" alt="Wooden TV media wall installation" class="project-image" />
+              <h3>Media Wall Installation</h3>
+            </article>
+            <article class="project-card reveal" data-category="finish">
+              <img src="assets/images/project-finish.svg" loading="lazy" decoding="async" width="640" height="420" alt="Interior wood wall finishes" class="project-image" />
+              <h3>Custom Interior Wall Panels</h3>
+            </article>
+            <article class="project-card reveal reveal-delay-1" data-category="kitchen">
+              <img src="assets/images/project-kitchen.svg" loading="lazy" decoding="async" width="640" height="420" alt="Open plan kitchen joinery" class="project-image" />
+              <h3>Executive Open-Plan Kitchen</h3>
+            </article>
+            <article class="project-card reveal reveal-delay-2" data-category="wardrobe">
+              <img src="assets/images/project-wardrobe.svg" loading="lazy" decoding="async" width="640" height="420" alt="Walk-in wardrobe woodwork" class="project-image" />
+              <h3>Walk-In Wardrobe Suite</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <a class="whatsapp-float" href="https://wa.me/2348000000000" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">WhatsApp</a>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
